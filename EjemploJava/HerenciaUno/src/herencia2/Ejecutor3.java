@@ -38,7 +38,7 @@ public class Ejecutor3 {
             entrada.nextLine();
             switch(opcion) {
                 case 1:
-                    System.out.println("Ingrese nombres");
+                    System.out.println("\nIngrese nombres");
                     String nombres = entrada.nextLine();
                     System.out.println("Ingrese apellidos");
                     String apellidos = entrada.nextLine();
@@ -64,7 +64,7 @@ public class Ejecutor3 {
                     System.out.printf("\n%s\n", estudianteD);
                     break;
                 case 2:
-                    System.out.println("Ingrese nombres");
+                    System.out.println("\nIngrese nombres");
                     nombres = entrada.nextLine();
                     System.out.println("Ingrese apellidos");
                     apellidos = entrada.nextLine();
@@ -91,11 +91,11 @@ public class Ejecutor3 {
                     System.out.printf("\n%s\n", estudianteP);
                     break;
                 case 3:
-                    System.err.println("Saliendo del programa...");
+                    System.err.println("\nSaliendo del programa...");
                     condicion = false;
                     break;
                 default:
-                    System.out.println("Opción incorrecta...");
+                    System.out.println("\nOpción incorrecta...");
             }
         }
         
