@@ -41,7 +41,7 @@ public class Ejecutor2 {
         estudiante.establecerCostoAsignatura(costoAsignatura);
         estudiante.calcularMatriculaDistancia();
         
-        System.out.printf("%s\n", estudiante);
+        System.out.printf("\n%s\n", estudiante);
         
     }
 }
