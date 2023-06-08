@@ -18,13 +18,17 @@ public class Ejecutor {
         // Crear una arreglo de 4 elementos de tipo Edificio
         Edificio edf1 = new Edificio("Edificio central");
         edf1.establecerCostos(20000);
+        edf1.calcularCostoPredio();
         
         Edificio edf2 = new Edificio("Edificio norte");
         edf2.establecerCostos(30000);
+        edf2.calcularCostoPredio();
         Edificio edf3 = new Edificio("Edificio sur");
         edf3.establecerCostos(10000);
+        edf3.calcularCostoPredio();
         Edificio edf4 = new Edificio("Edificio secundario");
         edf4.establecerCostos(5000);
+        edf4.calcularCostoPredio();
         
         Edificio [] listaEdificios = {edf1, edf2, edf3, edf4};
         // double c = listaEdificios[2].obtenerCosto();
@@ -49,6 +53,7 @@ public class Ejecutor {
         miempresa.establecerCostosBienesInmuebles();
         miempresa.establecerCostoVehiculos();
         miempresa.calcularCostoTotalBienes();
+        miempresa.establecerCostoTotalPagoPredio();
         // Imprimir el costo de los bienes inmuebles de la empresa  
         // System.out.printf("%.2f\n", miempresa.obtenerCostosBienesInmuebles());
         System.out.printf("%s\n", miempresa);

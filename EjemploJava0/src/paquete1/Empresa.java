@@ -17,6 +17,7 @@ public class Empresa {
     private double costoBienesInmuebles;
     private double costoVehiculos;
     private double costoTotalBienes;
+    private double costoTotalPagoPredio;
     
     public void establecerNombre(String m){
         nombre = m;
@@ -53,6 +54,15 @@ public class Empresa {
         costoTotalBienes = costoBienesInmuebles + costoVehiculos;
     }
     
+    public void establecerCostoTotalPagoPredio(){
+        double suma = 0;
+        for (int i = 0; i < edificios.length; i++) {
+            suma = suma + edificios[i].obtenerCostoPredio();
+        }
+        
+        costoTotalPagoPredio = suma;
+    }
+    
     public String obtenerNombre(){
         return nombre;
     }
@@ -75,6 +85,10 @@ public class Empresa {
     
     public double obtenerCostoTotalBienes(){
         return costoTotalBienes;
+    }
+    
+    public double obtenerCostoTotalPagoPredio(){
+        return costoTotalPagoPredio;
     }
     
     @Override
@@ -109,9 +123,12 @@ public class Empresa {
                     edificios[i].obtenerCosto());
         }
         
-        reporte = String.format("%sTotal de inmuebles: %.2f\n", 
+        reporte = String.format("%sTotal de inmuebles: %.2f\nCosto Total "
+                + "Pago Predio: %.2f\n"
+                , 
                 reporte,
-                costoBienesInmuebles);
+                costoBienesInmuebles,
+                costoTotalPagoPredio);
         
         reporte = String.format("%s\nLista de Vehículos\n",reporte);
         for (int i = 0; i < vehiculos.length; i++) {
