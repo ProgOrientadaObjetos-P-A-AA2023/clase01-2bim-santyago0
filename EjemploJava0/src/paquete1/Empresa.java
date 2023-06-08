@@ -116,11 +116,12 @@ public class Empresa {
         String reporte = String.format("%s\nLista de Edificio\n", 
                 obtenerNombre());
         for (int i = 0; i < edificios.length; i++) {
-            reporte = String.format("%s%d. %s (%.2f)\n", 
+            reporte = String.format("%s%d. %s (%.2f | %.2f)\n", 
                     reporte, 
                     i+1,
                     edificios[i].obtenerNombre().toUpperCase(), 
-                    edificios[i].obtenerCosto());
+                    edificios[i].obtenerCosto(),
+                    edificios[i].obtenerCostoPredio());
         }
         
         reporte = String.format("%sTotal de inmuebles: %.2f\nCosto Total "
