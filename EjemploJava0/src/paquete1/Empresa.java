@@ -26,6 +26,10 @@ public class Empresa {
         edificios = m;
     }
     
+    public void establecerVehiculos(Vehiculo[] v) {
+        vehiculos = v;
+    }
+    
     public void establecerCostosBienesInmuebles(){
         double suma = 0;
         for (int i = 0; i < edificios.length; i++) {
@@ -36,6 +40,19 @@ public class Empresa {
         costoBienesInmuebles = suma;
     }
     
+    public void establecerCostoVehiculos() {
+        double suma = 0;
+        for (int i = 0; i < vehiculos.length; i++) {
+            suma = suma + vehiculos[i].obtenerValor();
+        }
+        
+        costoVehiculos = suma;
+    }
+    
+    public void calcularCostoTotalBienes() {
+        costoTotalBienes = costoBienesInmuebles + costoVehiculos;
+    }
+    
     public String obtenerNombre(){
         return nombre;
     }
@@ -44,8 +61,20 @@ public class Empresa {
         return edificios;
     }
     
+    public Vehiculo[] obtenerVehiculos(){
+        return vehiculos;
+    }
+    
     public double obtenerCostosBienesInmuebles(){
         return costoBienesInmuebles;
+    }
+    
+    public double obtenerCostoVehiculos(){
+        return costoVehiculos;
+    }
+    
+    public double obtenerCostoTotalBienes(){
+        return costoTotalBienes;
     }
     
     @Override
@@ -83,6 +112,19 @@ public class Empresa {
         reporte = String.format("%sTotal de inmuebles: %.2f\n", 
                 reporte,
                 costoBienesInmuebles);
+        
+        reporte = String.format("%s\nLista de Vehículos\n",reporte);
+        for (int i = 0; i < vehiculos.length; i++) {
+            reporte = String.format("%s%d. %s, %s (%.2f)\n", 
+                    reporte, 
+                    i+1,
+                    vehiculos[i].obtenerTipo(), 
+                    vehiculos[i].obtenerMatricula(),
+                    vehiculos[i].obtenerValor());
+        }
+        
+        reporte = String.format("%sTotal de inmuebles: %.2f\n\nTotal bienes: "
+                + "%.2f",reporte,costoVehiculos,costoTotalBienes);
         
         return reporte;
     }
