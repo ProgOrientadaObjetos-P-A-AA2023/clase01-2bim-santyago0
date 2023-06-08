@@ -26,7 +26,7 @@ public class Ejecutor3 {
         entrada.useLocale(Locale.US);
         boolean condicion = true;
         while(condicion) {
-            System.out.printf("\n%s\n\n%s\n%s\n%s\n\n%s",
+            System.out.printf("\n%s\n%s\n%s\n%s\n\n%s",
                     "--Menú de Opciones--",
                     "1) Ingresar un Estudiante Distancia",
                     "2) Ingresar un Estudiante Presencial",
